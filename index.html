@@ -1,29 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Alex Teruel | Jornalista</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
   font-family:'Inter',sans-serif;
   background:#ffffff;
-  color:#111;
+  color:#111111;
   line-height:1.6;
 }
-
-/* HERO */
 
 .hero{
   padding:80px 20px;
   background:#ffffff;
-  border-bottom:1px solid #e5e5e5;
+  border-bottom:1px solid #e6e6e6;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
 }
 
 .hero h1{
   font-family:'Playfair Display',serif;
   font-size:3rem;
-  color:#111;
+  margin-bottom:10px;
+  color:#111111;
 }
 
 .hero p{
-  color:#666;
+  color:#666666;
+  font-size:1rem;
 }
-
-/* MAIN */
 
 main{
   max-width:1200px;
@@ -31,22 +52,32 @@ main{
   padding:50px 20px;
 }
 
-/* SECTION TITLE */
+.layout{
+  display:grid;
+  grid-template-columns:3fr 1fr;
+  gap:50px;
+}
 
 .section-title{
   font-family:'Playfair Display',serif;
   font-size:1.6rem;
   margin-bottom:20px;
-  border-left:4px solid #d90429; /* vermelho */
+  border-left:4px solid #c81d25;
   padding-left:12px;
+  color:#111111;
 }
 
-/* TABS */
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:28px;
+}
 
 .tab-button{
   background:#f5f5f5;
-  color:#333;
-  border:1px solid #ddd;
+  color:#333333;
+  border:1px solid #dddddd;
   padding:10px 16px;
   border-radius:999px;
   cursor:pointer;
@@ -55,26 +86,23 @@ main{
 }
 
 .tab-button:hover{
-  background:#ffe5e5;
-  border-color:#d90429;
-  color:#d90429;
+  background:#fff1f1;
+  border-color:#c81d25;
+  color:#c81d25;
+  transform:translateY(-1px);
 }
 
 .tab-button.active{
-  background:#d90429;
-  color:white;
-  border-color:#d90429;
+  background:#c81d25;
+  color:#ffffff;
+  border-color:#c81d25;
 }
-
-/* REPORT GRID */
 
 #reports-container{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:25px;
 }
-
-/* CARD */
 
 .report{
   background:#ffffff;
@@ -87,7 +115,7 @@ main{
 .report:hover{
   transform:translateY(-6px);
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  border:1px solid #d90429;
+  border:1px solid #c81d25;
 }
 
 .report img{
@@ -97,24 +125,22 @@ main{
   background:#f2f2f2;
 }
 
-/* METADATA */
-
 .vehicle{
   font-size:.75rem;
+  letter-spacing:.5px;
   text-transform:uppercase;
-  color:#888;
+  color:#8a8a8a;
   padding:14px 16px 0 16px;
 }
 
 .category{
   font-size:.72rem;
-  color:#d90429;
+  color:#c81d25;
   text-transform:uppercase;
+  letter-spacing:.6px;
   padding:4px 16px 0 16px;
   font-weight:600;
 }
-
-/* TITLE */
 
 .report h3{
   font-family:'Playfair Display',serif;
@@ -124,61 +150,326 @@ main{
   transition:.3s;
 }
 
-/* 🔴 HOVER GRADIENTE VERMELHO */
-
 .report a:hover h3{
-  background:linear-gradient(90deg,
-    #d90429,
-    #ef233c,
-    #ff4d4d,
-    #d90429
-  );
-
+  background:linear-gradient(90deg,#9e0b0f,#c81d25,#ef233c,#9e0b0f);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-/* LINKS */
-
 .report a{
   text-decoration:none;
-  color:#111;
+  color:#111111;
   display:block;
 }
-
-/* SIDEBAR */
 
 .bio{
   background:#fafafa;
   padding:25px;
   border-radius:10px;
   border:1px solid #e5e5e5;
+  position:sticky;
+  top:40px;
 }
 
 .bio h2{
   font-family:'Playfair Display',serif;
+  margin-bottom:15px;
+  color:#111111;
 }
 
 .bio p{
-  color:#555;
+  font-size:.95rem;
+  color:#555555;
+  margin-bottom:20px;
+}
+
+.bio-icons{
+  display:flex;
+  gap:15px;
 }
 
 .bio-icons a{
-  color:#d90429;
+  color:#c81d25;
+  font-size:1.3rem;
+  transition:.25s;
 }
 
 .bio-icons a:hover{
-  color:#a6031f;
-  transform:scale(1.1);
+  color:#9e0b0f;
+  transform:scale(1.15);
 }
 
-/* FOOTER */
+.empty-state{
+  grid-column:1 / -1;
+  background:#fafafa;
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  padding:30px;
+  color:#777777;
+  text-align:center;
+}
 
 footer{
   border-top:1px solid #e5e5e5;
   padding:35px;
   margin-top:70px;
   text-align:center;
-  color:#777;
+  color:#777777;
   font-size:.9rem;
 }
+
+@media(max-width:900px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  #reports-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bio{
+    position:static;
+  }
+}
+
+@media(max-width:600px){
+  #reports-container{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Alex Teruel</h1>
+    <p>Portfólio de reportagens</p>
+  </div>
+</section>
+
+<main>
+  <div class="layout">
+    <div>
+      <h2 class="section-title">Reportagens</h2>
+      <div class="tabs" id="tabs-container"></div>
+      <div id="reports-container"></div>
+    </div>
+
+    <div class="bio">
+      <h2>Sobre mim</h2>
+      <p>
+        Sou estudante de Jornalismo na ECA-USP e estagiária no Manual do Mundo. Atuo com roteiro e conteúdo digital, com foco em estrutura, clareza e comunicação visual.
+        <br><br>
+        Contato<br>
+        alexteruel@usp.br
+      </p>
+
+      <div class="bio-icons">
+        <a href="https://www.instagram.com/alextrrl/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/alex-teruel" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/alexcteruel" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Alex Teruel
+</footer>
+
+<script>
+const reports = [
+  {
+    title:"Sem resultados efetivos, prefeitura já gastou mais de R$ 100 milhões com o Smart Sampa",
+    vehicle:"Ponte Jornalismo",
+    category:"Política",
+    image:"https://via.placeholder.com/400x250?text=Ponte+Jornalismo",
+    link:"https://ponte.org/sem-resultados-efetivos-prefeitura-ja-gastou-mais-de-r-100-milhoes-com-o-smart-sampa/"
+  },
+  {
+    title:"Redação-laboratório completa 15 anos na cobertura dos congressos da Abraji",
+    vehicle:"Oboré",
+    category:"Jornalismo",
+    image:"https://via.placeholder.com/400x250?text=Obore",
+    link:"https://www.obore.com/noticia/redacao-laboratorio-completa-15-anos-na-cobertura-dos-congressos-da-abraji"
+  },
+  {
+    title:"Em tempos de crises, é essencial cuidar da saúde mental para garantir a qualidade do jornalismo",
+    vehicle:"Abraji",
+    category:"Jornalismo",
+    image:"https://via.placeholder.com/400x250?text=Abraji",
+    link:"https://congressoabraji.wordpress.com/2024/07/12/em-tempos-de-crises-e-essencial-cuidar-da-saude-mental-para-garantir-a-qualidade-do-jornalismo/"
+  },
+  {
+    title:"Danos causados pela mídia exigem protocolos claros de reparação",
+    vehicle:"Abraji",
+    category:"Jornalismo",
+    image:"https://via.placeholder.com/400x250?text=Abraji",
+    link:"https://congressoabraji.wordpress.com/2024/07/13/danos-causados-pela-midia-exigem-protocolos-claros-de-reparacao/"
+  },
+  {
+    title:"A raiz do problema",
+    vehicle:"Jornal do Campus",
+    category:"Universidade",
+    image:"https://via.placeholder.com/400x250?text=Jornal+do+Campus",
+    link:"https://www.jornaldocampus.usp.br/index.php/2025/09/a-raiz-do-problema/"
+  },
+  {
+    title:"Crise na mesinha da FAU: aumento de furtos ameaça tradição de vendas sem supervisão na USP",
+    vehicle:"Jornal do Campus",
+    category:"Universidade",
+    image:"https://via.placeholder.com/400x250?text=Jornal+do+Campus",
+    link:"https://www.jornaldocampus.usp.br/index.php/2025/12/crise-na-mesinha-da-fau-aumento-de-furtos-ameaca-tradicao-de-vendas-sem-supervisao-na-usp/"
+  },
+  {
+    title:"Trans-formada: a primeira mulher trans a se graduar na Escola de Educação Física e Esporte da USP",
+    vehicle:"Jornal do Campus",
+    category:"Universidade",
+    image:"https://via.placeholder.com/400x250?text=Jornal+do+Campus",
+    link:"https://www.jornaldocampus.usp.br/index.php/2025/12/trans-formada-a-primeira-mulher-trans-a-se-graduar-na-escola-de-educacao-fisica-e-esporte-da-usp/"
+  },
+  {
+    title:"O sangue vence",
+    vehicle:"Jornal do Campus",
+    category:"Universidade",
+    image:"https://via.placeholder.com/400x250?text=Jornal+do+Campus",
+    link:"https://www.jornaldocampus.usp.br/index.php/2025/10/o-sangue-vence/"
+  },
+  {
+    title:"Na Seleção USP, atletas equilibram estudo e esporte",
+    vehicle:"Jornal do Campus",
+    category:"Esporte",
+    image:"https://via.placeholder.com/400x250?text=Jornal+do+Campus",
+    link:"https://www.jornaldocampus.usp.br/index.php/2025/11/na-selecao-usp-atletas-equilibram-estudo-e-esporte/"
+  },
+  {
+    title:"Tron: Ares",
+    vehicle:"Jornalismo Júnior",
+    category:"Cultura",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/tron-ares/"
+  },
+  {
+    title:"Chenjerai Kumanyika reflete sobre violência policial e papel do jornalismo",
+    vehicle:"Jornalismo Júnior",
+    category:"Política",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/chenjerai-kumanyika-reflete-sobre-violencia-policial-e-papel-do-jornalismo/"
+  },
+  {
+    title:"Flow",
+    vehicle:"Jornalismo Júnior",
+    category:"Cultura",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/flow/"
+  },
+  {
+    title:"Observatório: STF suspende a rede social X, o que antecedeu a queda do antigo Twitter",
+    vehicle:"Jornalismo Júnior",
+    category:"Digital",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/observatorio-stf-suspende-a-rede-social-x-o-que-antecedeu-a-queda-do-antigo-twitter/"
+  },
+  {
+    title:"Olimpíadas 2024: Rebeca Andrade se torna maior medalhista brasileira das Olimpíadas",
+    vehicle:"Jornalismo Júnior",
+    category:"Esporte",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/olimpiadas-2024-rebeca-andrade-se-torna-maior-medalhista-brasileira-das-olimpiadas/"
+  },
+  {
+    title:"70 anos das Flechas de Prata na Fórmula 1",
+    vehicle:"Jornalismo Júnior",
+    category:"Esporte",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/70-anos-das-flechas-de-prata-na-formula-1/"
+  },
+  {
+    title:"Observatório: Parlamento Europeu reflete crescimento do apoio à extrema-direita",
+    vehicle:"Jornalismo Júnior",
+    category:"Política",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/observatorio-parlamento-europeu-reflete-crescimento-do-apoio-a-extrema-direita/"
+  },
+  {
+    title:"Para sempre, my friend",
+    vehicle:"Jornalismo Júnior",
+    category:"Cultura",
+    image:"https://via.placeholder.com/400x250?text=Jornalismo+Junior",
+    link:"https://jornalismojunior.com.br/para-sempre-my-friend/"
+  }
+];
+
+const categories = ["Todos", ...new Set(reports.map(report => report.category))];
+let activeCategory = "Todos";
+
+function renderTabs() {
+  const tabsContainer = document.getElementById("tabs-container");
+  tabsContainer.innerHTML = "";
+
+  categories.forEach(category => {
+    const button = document.createElement("button");
+    button.classList.add("tab-button");
+
+    if (category === activeCategory) {
+      button.classList.add("active");
+    }
+
+    button.textContent = category;
+
+    button.addEventListener("click", () => {
+      activeCategory = category;
+      renderTabs();
+      renderReports();
+    });
+
+    tabsContainer.appendChild(button);
+  });
+}
+
+function renderReports() {
+  const container = document.getElementById("reports-container");
+  container.innerHTML = "";
+
+  const filteredReports = activeCategory === "Todos"
+    ? reports
+    : reports.filter(report => report.category === activeCategory);
+
+  if (filteredReports.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        Nenhuma reportagem encontrada nesta categoria.
+      </div>
+    `;
+    return;
+  }
+
+  filteredReports.forEach(report => {
+    const div = document.createElement("div");
+    div.classList.add("report");
+
+    div.innerHTML = `
+      <a href="${report.link}" target="_blank">
+        <img src="${report.image}" alt="${report.title}">
+        <div class="vehicle">${report.vehicle}</div>
+        <div class="category">${report.category}</div>
+        <h3>${report.title}</h3>
+      </a>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+renderTabs();
+renderReports();
+</script>
+
+</body>
+</html>
